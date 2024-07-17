@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>$BILLY</title>
+        <meta
+          name="description"
+          content="The cutest dog billy, is going to a billy." />
+        <link rel="canonical" href="https://billysol.lol/" />
+        <link rel="shortlink" href="https://billysol.lol/" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <meta property="og:url" content="https://billysol.lol/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="$BILLY" />
+        <meta
+          property="og:description"
+          content="The cutest dog billy, is going to a billy." />
+        <meta property="og:image" content="/preview.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="billysol.lol/" />
+        <meta property="twitter:url" content="https://billysol.lol/" />
+        <meta name="twitter:title" content="$BILLY" />
+        <meta
+          name="twitter:description"
+          content="The cutest dog billy, is going to a billy." />
+        <meta name="twitter:image" content="/preview.png" />
+  </head>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var audioElem = document.getElementById("myAudio");
+          audioElem.pause();
+          audioElem.muted = true;
+          audioElem.volume = 0;
+  
+          function updateMuteButtonText() {
+            var muteBtn = document.getElementById("muteButton");
+            muteBtn.textContent = audioElem.muted ? "SONG" : "MUTE";
+          }
+  
+          function fadeInVolume(targetVolume, duration) {
+            var volumeStep = targetVolume / (duration / 100);
+            var currentVolume = audioElem.volume;
+            var fadeInterval = setInterval(function () {
+              currentVolume += volumeStep;
+              if (currentVolume >= targetVolume) {
+                audioElem.volume = targetVolume;
+                clearInterval(fadeInterval);
+              } else {
+                audioElem.volume = currentVolume;
+              }
+            }, 100);
+          }
+  
+          function toggleMute() {
+            if (audioElem.muted) {
+              audioElem.muted = false;
+              audioElem
+                .play()
+                .then(() => {
+                  fadeInVolume(0.1, 5000);
+                })
+                .catch((e) => console.error("Playback failed:", e));
+            } else {
+              audioElem.muted = true;
+              audioElem.pause();
+              audioElem.volume = 0;
+            }
+            updateMuteButtonText();
+          }
+  
+          var muteBtn = document.getElementById("muteButton");
+          muteBtn.addEventListener("click", toggleMute);
+  
+          updateMuteButtonText();
+        });
+      </script>
+
+  <body>
+
+
+    <audio id="myAudio" autoplay loop>
+        <source src="billy.mp3" type="audio/mpeg" />
+      </audio>
+
+    <div class="hearthands" id="object1"></div>
+    <div class="doubleheart" id="object2"></div>
+    <div class="growingheart" id="object3"></div>
+    <div class="stars" id="object4"></div>
+    <div class="sparkleheart" id="object5"></div>
+    <div class="heartsmile" id="object6"></div>
+    <div class="paws" id="object7"></div>
+    <div class="pinch" id="object8"></div>
+    <div class="blueheart" id="object9"></div>
+    <div class="bone" id="object10"></div>
+
+    <div class="navigation-bar">
+      <a class="link"
+        href=""
+        >BUY</a
+      >
+      <a class="link" href=""
+        >CHART</a
+      >
+      <a class="link" onclick="toggleMute()" id="muteButton">UNMUTE</a>
+    </div>
+    <div class="container">
+    <div class="content">
+      <img src="billy.jpg" class="portrait" />
+    </div>
+    <div class="content-text">
+      <p>
+        Billy came a long way. He had already reached 200M market cap. </p> 
+        <p> Well done, Billy. Now, Billy needs some rest. Billy is taking a shit now.
+      </p>
+    </div>
+
+    <a href="">
+      <div class="button"><span>BUY SOME $BTS!</span></div>
+    </a>
+  
+
+    <div class="ca-text">
+      <p>
+        
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="externals">
+        <a href="" target="_blank"
+          ><div class="square">
+            <img src="telegram.svg" alt="logo" class="logo" /></div
+        ></a>
+        <a href="https://x.com/BTSsolcoin" target="_blank"
+          ><div class="square">
+            <img src="x.svg" alt="logo" class="logo" /></div
+        ></a>
+        <a
+          href=""
+          target="_blank"
+          ><div class="square">
+            <img src="dexscreener.svg" alt="logo" class="logo" /></div
+        ></a>
+        <a
+        href=""
+        target="_blank"
+        ><div class="square">
+          <img src="dextools.svg" alt="logo" class="logo" /></div
+      ></a>
+      
+  </div>
+
+  <div class="content-text">
+    <p>
+Make your own $BTS meme!
+    </p>
+  </div>
+  
+    <div class="horizontal-container">
+      <img src="meme3.jpg" id="slideshow" class="meme" />
+  </div>
+
+  <script>
+    const images = [
+      "meme3.jpg",
+      "meme2.png",
+      "meme1.png",
+      "meme4.jpg",
+      "meme5.png",
+      "meme8.png",
+      "meme9.png",
+      ];
+
+    let currentImageIndex = 0;
+    const slideshowElement = document.getElementById("slideshow");
+
+    function changeImage() {
+      slideshowElement.classList.add("fade-out");
+
+      setTimeout(() => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        slideshowElement.src = images[currentImageIndex];
+        slideshowElement.classList.remove("fade-out");
+        slideshowElement.classList.add("fade-in");
+      }, 1000);
+    }
+
+    setInterval(changeImage, 3000);
+
+    slideshowElement.classList.add("fade-in");
+  </script>
+    <div class="button" style="margin-bottom: 40px; opacity: 80%;"><span>Second chance</span></div>
+  </body>
+</html>
